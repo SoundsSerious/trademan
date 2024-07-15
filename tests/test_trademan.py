@@ -5,17 +5,20 @@
 
 import unittest
 
-from trademan import trademan
+from trademan import data
+from trademan.portfolio import *
+from trademan.trademan.data import get_tickers
 
+import subprocess as subp
 
 class TestTrademan(unittest.TestCase):
     """Tests for `trademan` package."""
 
-    def setUp(self):
-        """Set up test fixtures, if any."""
+    def test_market_dl(self):
+        """gets appl"""
+        dl = data.get_tickers('AAPL')
+        perf = data.data_db[f'perf/AAPL']
 
-    def tearDown(self):
-        """Tear down test fixtures, if any."""
-
-    def test_000_something(self):
-        """Test something."""
+    def test_cli(self) :
+        os.system("""trademan -cls etfs -gamma 1 -alloc 100000 -in QQQ,SCHG,VGT,SLV,VIG,SPY,VOO,VUG,IAU,PAVE,NANC""")
+        os.system("""trademan -cls etfs -gamma 20 -alloc 100000 -in QQQ,SCHG,VGT,SLV,VIG,SPY,VOO,VUG,IAU,PAVE,NANC,KRUZ -cycl-err 100""")
