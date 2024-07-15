@@ -1,5 +1,5 @@
 ### What Is This?
-`trademan` is a utility to gather market data and generate optimal portfolios via a CLI interface. Data is provided by yfinance and portfolio optimization is done with PyPortfolioOpt. Stock data is cached to a diskcache for a week to prevent excess YFinance calls.
+`trademan` is a utility to gather market data and generate optimal portfolios via a CLI interface. Data is provided by ![yfinance](https://pypi.org/project/yfinance/) and portfolio optimization is done with ![PyPortfolioOpt](https://pyportfolioopt.readthedocs.io/en/latest/). Stock data is cached to a diskcache for a week to prevent excess YFinance calls.
 
 ### How To Install It:
 `pip install git+https://github.com/SoundsSerious/trademan.git@v0.1.0`
